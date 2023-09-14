@@ -1,0 +1,36 @@
+spring:
+  application:
+    name: notificationService
+
+logging:
+  level:
+    org:
+      springframework:
+        web: DEBUG
+
+management:
+  endpoints:
+    web:
+      base-path: /actuator
+      exposure:
+        include: [ "health","prometheus", "metrics" ]
+  endpoint:
+    health:
+      show-details: always
+    metrics:
+      enabled: true
+    prometheus:
+      enabled: true
+server:
+  port: 8085
+
+twilio:
+  auth:
+    sendGridId: U0cuZ2JhUTV5bVBRMXF0MGxyenhNdUJHQS5iRlg5QlZ5NnJVMW5zMWlDRXZlWGtJOVJsUFhjSEF2VTlZaklqaHNrakow
+    sid: VkE3ODU5M2MyYTM2ZmFiZTMzNzc3ZDYxMjRiM2MyNjk1NA==
+    authToken: NDM5MjQ1ZjBmYzdiNDRhYjQ1MjM2NTY1ODI0NGQ3ZWM=
+    accountSid: QUNhMjM4YTliNWQ2YjA1NDUxMTJmNzk5YjlmOWM1ZTdhOA==
+    senderEmail: tarunkumar.ks1992@gmail.com
+notification:
+  integration:
+    serviceName: FAKE
